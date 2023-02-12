@@ -40,6 +40,7 @@
     <ClInclude Include="GeomSimple.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="TCP_visitor.h" />
+    <ClInclude Include="Vector2d.h" />
     <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

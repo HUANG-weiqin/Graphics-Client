@@ -19,12 +19,17 @@ int main()
 
 		vector<int> v({ 50,50,  100,100,  50,100,  100,50});
 		GeomPolygone* c4 = new GeomPolygone(v);
+		
+
+		Point pivot(120, 120);
+		
 
 		GeomCompos gc;
 		gc.add(c1);
 		gc.add(c2);
 		gc.add(c3);
 		gc.add(c4);
+		gc.rotateBy(&pivot, 0.5);
 
 		TCP_visitor tcpv;
 		gc.accept(&tcpv);
