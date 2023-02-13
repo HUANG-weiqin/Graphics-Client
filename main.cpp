@@ -33,9 +33,9 @@ int main()
 		gc.add(c2);
 		gc.add(c3);
 		gc.add(c4);
-		//gc.rotateBy(&pivot, 0.5);
-		//Vector2d move(50, 100);
-		//gc.moveBy(move);
+		gc.rotateBy(&pivot, 0.5);
+		Vector2d move(50, 100);
+		gc.moveBy(move);
 
 		TCP_visitor tcpv;
 		gc.accept(&tcpv);
