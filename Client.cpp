@@ -47,8 +47,8 @@ Client::Client() {
 
 	cout << "socket cr¨¦¨¦" << endl;
 
-	char addr[] = "127.0.0.1";
-	short port = 8080;
+	char addr[] = ADDRESS;
+	short port = PORT;
 	this->Connect(addr, port);
 }
 
@@ -72,7 +72,10 @@ Client::~Client() {
 void Client::Send(char * requete) {
 	int r;
 	int len = strlen(requete);
+	
 	r = send(this->sock, requete, len, 0);
+	char end[] = MSGEND;
+	r = send(this->sock, end, 1, 0);
 	if (r == SOCKET_ERROR)
 		throw Erreur("¨¦chec de l'envoi de la requ¨ºte");
 }
@@ -80,6 +83,8 @@ void Client::Send(char * requete) {
 void Client::Send(string & requete) {
 	int r;
 	r = send(this->sock, requete.c_str(), requete.length(), 0);
+	char end[] = MSGEND;
+	r = send(this->sock, end, 1, 0);
 	if (r == SOCKET_ERROR)
 		throw Erreur("¨¦chec de l'envoi de la requ¨ºte");
 }

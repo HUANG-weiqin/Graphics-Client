@@ -7,6 +7,8 @@
 class Visitor;
 class GeomCircle : public GeomSimple
 {
+/* 简单图形 中的 圆形，包含一个圆心，和半径radius
+*/
 public:
 	GeomCircle(int x, int y, int r);
 	virtual string toString();

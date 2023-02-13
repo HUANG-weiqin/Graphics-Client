@@ -7,6 +7,8 @@
 class Visitor;
 class GeomPolygone : public GeomSimple
 {
+/* 简单图形 中的 多边形，正方形 三角形，长方形都是特殊的多边形，唯一要注意的是这个形状的面积计算方式比较特殊
+*/
 public:
 	GeomPolygone(vector<int> &v);
 	virtual string toString();
