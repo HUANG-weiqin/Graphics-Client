@@ -35,6 +35,9 @@ public:
 			p->zoomBy(pivot,factor);
 		}
 	}
+
+	virtual float surface() = 0;
+
 protected:
 	vector<Point *> points;
 };

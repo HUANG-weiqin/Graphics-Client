@@ -31,3 +31,11 @@ void GeomCompos::zoomBy(Point* pivot, float factor) {
 		g->zoomBy(pivot, factor);
 	}
 }
+
+float GeomCompos::surface() {
+	float res = 0;
+	for (Geometric* g : geoms) {
+		res += g->surface();
+	}
+	return res;
+}

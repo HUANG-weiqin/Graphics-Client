@@ -13,6 +13,7 @@ public:
 	virtual void moveBy(Vector2d& v);
 	virtual void rotateBy(Point* pivot, float radian);
 	virtual void zoomBy(Point* pivot, float factor);
+	virtual float surface();
 private:
 	vector<Geometric * > geoms;
 };

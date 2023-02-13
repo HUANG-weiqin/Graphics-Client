@@ -11,6 +11,7 @@ public:
 	GeomCircle(int x, int y, int r);
 	virtual string toString();
 	virtual void accept(Visitor* v);
+	virtual float surface() { return 3.14 * radius * radius; }
 private:
 	Point* center;
 	int radius;

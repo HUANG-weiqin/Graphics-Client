@@ -10,4 +10,5 @@ public:
 	virtual void moveBy(Vector2d& v) = 0;
 	virtual void rotateBy(Point* pivot, float radian) = 0;
 	virtual void zoomBy(Point* pivot, float factor) = 0;
+	virtual float surface() = 0;
 };
