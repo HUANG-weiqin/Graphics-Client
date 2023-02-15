@@ -2,6 +2,8 @@
 #include "GeomCircle.h"
 #include "GeomPolygone.h"
 #include "GeomLine.h"
+#include "Client.h"
+#include "CmdForServer.h"
 Menu::Menu(GeomCompos* g, Visitor* v) {
 	G = g;
 	V = v;
@@ -119,5 +121,7 @@ void Menu::rotate() {
 }
 
 void Menu::updat() {
-	V->visit(Menu::G);
+	char cmd_clear[] = CMD_CLEAR;
+	Client::GetInstance()->Send(cmd_clear); //清除屏幕上已有的图形
+	V->visit(G);
 }

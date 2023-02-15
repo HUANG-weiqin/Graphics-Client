@@ -11,3 +11,4 @@
 #define CMD_LINE "2"
 #define CMD_LOAD "3"
 #define CMD_SAVE "4"
+#define CMD_CLEAR "5"
