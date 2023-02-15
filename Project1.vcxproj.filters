@@ -42,6 +42,9 @@
     <ClCompile Include="Menu.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="String_visitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Erreur.h">
@@ -84,6 +87,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="String_visitor.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

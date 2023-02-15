@@ -4,6 +4,10 @@
 #include "GeomLine.h"
 #include "Client.h"
 #include "CmdForServer.h"
+#include <fstream>
+#include <iostream>
+#include "String_visitor.h"
+#include <vector>
 Menu::Menu(GeomCompos* g, Visitor* v) {
 	G = g;
 	V = v;
@@ -20,6 +24,9 @@ void Menu::run(){
 		cout << "4 平移 " << endl;
 		cout << "5 旋转" << endl;
 		cout << "6 缩放 " << endl;
+		cout << "7 保存 " << endl;
+		cout << "8 读取" << endl;
+		cout << "9 计算面积 " << endl;
 		cout << "0 退出 " << endl;
 		cout << "############# " << endl;
 		int choice;
@@ -43,6 +50,15 @@ void Menu::run(){
 				break;
 			case 6:
 				zoom();
+				break;
+			case 7:
+				save();
+				break;
+			case 8:
+				load();
+				break;
+			case 9:
+				surface();
 				break;
 			default:
 				return;
@@ -124,4 +140,63 @@ void Menu::updat() {
 	char cmd_clear[] = CMD_CLEAR;
 	Client::GetInstance()->Send(cmd_clear); //清除屏幕上已有的图形
 	V->visit(G);
+}
+
+void Menu::save() {
+	ofstream outfile;
+	char name[255];
+	cout << "输入保存文件名" << endl;
+	cin >> name;
+	outfile.open(name);
+	String_visitor st;
+	st.visit(G);
+	outfile << st.getString();
+	outfile.close();
+}
+
+void Menu::load() {
+	ifstream infile;
+	char name[255];
+	cout << "输入读取文件名" << endl;
+	cin >> name;
+	infile.open(name);
+	string line;
+	stringstream ss;
+	while (getline(infile,line))
+	{
+		ss << line;
+		int type;
+		ss >> type;
+		vector<int> p;
+		int x, y, x1, y1, r;
+		switch (type)
+		{
+			case ID_CIRCLE:
+				ss >> x >> y >> r;
+				G->add(new GeomCircle(x, y, r));
+				break;
+			case ID_POLYGONE:
+				while (!ss.eof())
+				{
+					int var;
+					ss >> var;
+					p.push_back(var);
+				}
+				G->add(new GeomPolygone(p));
+				break;
+			case ID_LINE:
+				
+				ss >> x >> y >> x1 >> y1;
+				G->add(new GeomLine(x, y, x1,y1));
+				break;
+			default:
+				break;
+		}
+	}
+	updat();
+	infile.close();
+}
+
+void Menu::surface() {
+	cout << "总面积为 " << G->surface() << endl;
 }

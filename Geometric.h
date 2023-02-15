@@ -14,4 +14,5 @@ public:
 	virtual void rotateBy(Point* pivot, float radian) = 0;
 	virtual void zoomBy(Point* pivot, float factor) = 0;
 	virtual float surface() = 0;
+	virtual string toString() = 0;
 };

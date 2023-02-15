@@ -39,3 +39,11 @@ float GeomCompos::surface() {
 	}
 	return res;
 }
+
+string GeomCompos::toString() {	
+	stringstream ss;
+	for (Geometric *g : geoms) {
+		ss << g->toString();
+	}
+	return ss.str();
+}

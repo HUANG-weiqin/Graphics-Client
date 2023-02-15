@@ -27,6 +27,7 @@
     <ClCompile Include="GeomPolygone.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="String_visitor.cpp" />
     <ClCompile Include="TCP_visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +41,7 @@
     <ClInclude Include="GeomPolygone.h" />
     <ClInclude Include="GeomSimple.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="String_visitor.h" />
     <ClInclude Include="TCP_visitor.h" />
     <ClInclude Include="Vector2d.h" />
     <ClInclude Include="Visitor.h" />

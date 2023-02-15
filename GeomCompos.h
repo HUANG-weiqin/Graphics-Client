@@ -17,6 +17,7 @@ public:
 	virtual void rotateBy(Point* pivot, float radian);
 	virtual void zoomBy(Point* pivot, float factor);
 	virtual float surface();
+	virtual string toString();
 private:
 	vector<Geometric * > geoms;
 };

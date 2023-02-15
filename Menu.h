@@ -14,6 +14,9 @@ private:
 	void rotate();
 	void zoom();
 	void updat();
+	void save();
+	void load();
+	void surface();
 public:
 	void run();
 	Menu(GeomCompos* G, Visitor* V);

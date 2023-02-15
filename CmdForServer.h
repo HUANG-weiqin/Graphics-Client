@@ -12,3 +12,7 @@
 #define CMD_LOAD "3"
 #define CMD_SAVE "4"
 #define CMD_CLEAR "5"
+
+#define ID_CIRCLE 0
+#define ID_POLYGONE 1
+#define ID_LINE 2
