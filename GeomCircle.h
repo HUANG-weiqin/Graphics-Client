@@ -14,6 +14,11 @@ public:
 	virtual string toString();
 	virtual void accept(Visitor* v);
 	virtual float surface() { return 3.14 * radius * radius; }
+	virtual void zoomBy(Point* pivot, float factor)
+	{
+		GeomSimple::zoomBy(pivot, factor);
+		radius *= factor;
+	}
 private:
 	Point* center;
 	int radius;

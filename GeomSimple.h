@@ -39,6 +39,11 @@ public:
 		}
 	}
 
+	virtual void addPoint(Point* p)
+	{
+		points.push_back(p);
+	}
+
 	virtual float surface() = 0;
 
 protected:
