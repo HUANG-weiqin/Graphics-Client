@@ -18,7 +18,11 @@ public:
 			delete p;
 		}
 	};
-	virtual string toString() = 0;
+	virtual string toString() {
+		stringstream ss;
+		ss << r << " " << g <<" "<< b;
+		return ss.str();
+	};
 	virtual void accept(Visitor* v) = 0;
 	virtual void moveBy(Vector2d& v) 
 	{
@@ -46,6 +50,15 @@ public:
 
 	virtual float surface() = 0;
 
+	void setColor(int rr, int gg, int bb) {
+		r = rr;
+		g = gg;
+		b = bb;
+	}
+
 protected:
 	vector<Point *> points; //简单图形的 顶点集合，圆形的顶点是圆心，线条是两个端点等等
+	int r = 0;
+	int g = 0;
+	int b = 0;
 };

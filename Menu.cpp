@@ -169,11 +169,17 @@ void Menu::load() {
 		ss >> type;
 		vector<int> p;
 		int x, y, x1, y1, r;
+		int cr, cg, cb;
+		GeomCircle* res1;
+		GeomPolygone* res2;
+		GeomLine * res3;
 		switch (type)
 		{
 			case ID_CIRCLE:
-				ss >> x >> y >> r;
-				G->add(new GeomCircle(x, y, r));
+				ss >> x >> y >> r >> cr >> cg >> cb;
+				res1 = new GeomCircle(x, y, r);
+				res1->setColor(cr, cg, cb);
+				G->add(res1);
 				break;
 			case ID_POLYGONE:
 				while (!ss.eof())
@@ -182,12 +188,22 @@ void Menu::load() {
 					ss >> var;
 					p.push_back(var);
 				}
-				G->add(new GeomPolygone(p));
+				cb = p.back();
+				p.pop_back();
+				cg = p.back();
+				p.pop_back();
+				cr = p.back();
+				p.pop_back();
+				res2 = new GeomPolygone(p);
+				res2->setColor(cr, cg, cb);
+				G->add(res2);
 				break;
 			case ID_LINE:
 				
-				ss >> x >> y >> x1 >> y1;
-				G->add(new GeomLine(x, y, x1,y1));
+				ss >> x >> y >> x1 >> y1 >> cr >> cg >> cb;
+				res3 = new GeomLine(x, y, x1, y1);
+				res3->setColor(cr, cg, cb);
+				G->add(res3);
 				break;
 			default:
 				break;

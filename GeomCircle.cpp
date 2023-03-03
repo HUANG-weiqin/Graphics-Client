@@ -12,6 +12,6 @@ GeomCircle::GeomCircle(int x, int y, int r) {
 
 string GeomCircle::toString() {
 	stringstream ss;
-	ss <<center->toString() << " " << radius << endl;
+	ss <<center->toString() << " " << radius << " "<< GeomSimple::toString() <<endl;
 	return ss.str();
 }

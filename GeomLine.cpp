@@ -13,6 +13,6 @@ GeomLine::GeomLine(int x1, int y1, int x2,int y2) {
 
 string GeomLine::toString() {
 	stringstream ss;
-	ss <<p1->toString() << " " << p2->toString() << endl;
+	ss <<p1->toString() << " " << p2->toString() << " " << GeomSimple::toString() << endl;
 	return ss.str();
 }
