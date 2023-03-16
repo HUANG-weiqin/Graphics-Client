@@ -2,7 +2,7 @@
 /* 定义了与服务器直接的信息协议 比如 0开头代表我这条信息是要画圆形
 */
 #define ADDRESS "127.0.0.1" // 服务器ip地址
-#define PORT 8080   // 链接端口
+#define PORT 8081   // 链接端口
 #define MSGEND "\n" // 信息末端分隔符
 
 #define CMD_QUIT "quit"

@@ -26,7 +26,6 @@
     <ClCompile Include="GeomLine.cpp" />
     <ClCompile Include="GeomPolygone.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="String_visitor.cpp" />
     <ClCompile Include="TCP_visitor.cpp" />
   </ItemGroup>
@@ -45,7 +44,6 @@
     <ClInclude Include="TCP_visitor.h" />
     <ClInclude Include="Vector2d.h" />
     <ClInclude Include="Visitor.h" />
-    <ClInclude Include="Menu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -6,8 +6,8 @@ using namespace std;
 class Point
 {
 private:
-	int x = 0;
-	int y = 0;
+	float x = 0;
+	float y = 0;
 	Vector2d vectorTo(Point* other) {
 		return Vector2d(other->x - x, other->y - y);
 	}
@@ -16,10 +16,10 @@ public:
 		x = xx;
 		y = yy;
 	};
-	int getX() { return x; };
-	int getY() { return y; };
-	int setX(int newx) { x = newx; };
-	int setY(int newy) { y = newy; };
+	float getX() { return x; };
+	float getY() { return y; };
+	void setX(float newx) { x = newx; };
+	void setY(float newy) { y = newy; };
 	string toString() 
 	{
 		stringstream ss;
