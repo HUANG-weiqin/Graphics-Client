@@ -17,6 +17,6 @@ string GeomPolygone::toString() {
 	for (Point* pt : points) {
 		ss <<pt->toString()<<" ";
 	}
-	ss << GeomSimple::toString();
+	ss << GeomSimple::toString()<<endl;
 	return ss.str();
 }
