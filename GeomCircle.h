@@ -10,7 +10,7 @@ class GeomCircle : public GeomSimple
 /* 简单图形 中的 圆形，包含一个圆心，和半径radius
 */
 public:
-	GeomCircle(int x, int y, int r);
+	GeomCircle(float x, float y, float r);
 	virtual string toString();
 	virtual void accept(Visitor* v);
 	virtual float surface() { return 3.14 * radius * radius; }
@@ -21,5 +21,5 @@ public:
 	}
 private:
 	Point* center;
-	int radius;
+	float radius;
 };

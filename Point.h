@@ -12,7 +12,7 @@ private:
 		return Vector2d(other->x - x, other->y - y);
 	}
 public:
-	Point(int xx, int yy) {
+	Point(float xx, float yy) {
 		x = xx;
 		y = yy;
 	};

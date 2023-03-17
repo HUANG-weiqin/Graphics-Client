@@ -33,8 +33,8 @@ void load(GeomCompos* G, const char* name) {
 		ss << line;
 		int type;
 		ss >> type;
-		vector<int> p;
-		int x, y, x1, y1, r;
+		vector<float> p;
+		float x, y, x1, y1, r;
 		int cr, cg, cb;
 		GeomCircle* res1;
 		GeomPolygone* res2;
@@ -50,7 +50,7 @@ void load(GeomCompos* G, const char* name) {
 		case ID_POLYGONE:
 			while (!ss.eof())
 			{
-				int var;
+				float var;
 				ss >> var;
 				p.push_back(var);
 			}
@@ -85,32 +85,32 @@ int main()
 		GeomCompos g;
 
 
-		GeomCircle* c = new GeomCircle(200, 200, 100); //创建中点 200 200 半径 100的圆形
-		c->setColor(0, 125, 200); //设置rgb值
+		GeomCircle* c = new GeomCircle(0, 0, 5); //创建中点 200 200 半径 100的圆形
+		c->setColor(0, 15, 20); //设置rgb值
 		g.add(c); //放入总图形中
 
-		GeomLine* line = new GeomLine(0,0,400,400); //创建端点 0 0 到端点 400 400的线段
+		GeomLine* line = new GeomLine(0,0,4,4); //创建端点 0 0 到端点 400 400的线段
 		line->setColor(200, 125, 200); //设置rgb值
 		g.add(line); //放入总图形中
 
-		vector<int> points = { 50,50, 75,25, 100,50, 100,100 ,50,100 };// 多边形的顶点集合 x1 y1 x2 y2 .....
+		vector<float> points = { 5,5, 7,2.5, 10,5, 10,10 ,5,-1 };// 多边形的顶点集合 x1 y1 x2 y2 .....
 		GeomPolygone *pl = new GeomPolygone(points); //以该集合创建多边形
 		pl->setColor(0, 0, 200); //设置rgb值
 		g.add(pl); //放入总图形中
 		
-		Vector2d move = Vector2d(25, 50); //平移向量
+		Vector2d move = Vector2d(2.5, 5.0); //平移向量
 		g.moveBy(move); //将所有的图形向move向量平移
 
-		Point pivot = Point(75, 75);//中心
-		g.rotateBy(&pivot,0.3);//以pivot为中心旋转1弧度，注意是弧度不是角度
+		Point pivot = Point(0, 0);//中心
+		g.rotateBy(&pivot,0.03);//以pivot为中心旋转1弧度，注意是弧度不是角度
 
 		g.zoomBy(&pivot,0.5);//以pivot为中心，将图形变成原本的0.5倍大小
 
 		cout << "surface is:" << g.surface() << endl;
 
-		save(&g, "saved_data.geom");//保存所有图形到文件中
+		save(&g, "saved_data.txt");//保存所有图形到文件中
 
-		// load(&g, "saved_data.geom");//将保存的图形读取到g中
+		//load(&g, "saved_data.txt");//将保存的图形读取到g中
 		
 
 		//visitor

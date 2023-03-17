@@ -4,7 +4,7 @@ void GeomCircle::accept(Visitor* v) {
 	v->visit(this);
 }
 
-GeomCircle::GeomCircle(int x, int y, int r) {
+GeomCircle::GeomCircle(float x, float y, float r) {
 	this->center = new Point(x, y);
 	points.push_back(this->center);
 	radius = r;

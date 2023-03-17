@@ -10,7 +10,7 @@ class GeomLine : public GeomSimple
 /* 简单图形 中的 线段，由两个端点组成，面积为0
 */
 public:
-	GeomLine(int x1, int y1, int x2,int y2);
+	GeomLine(float x1, float y1, float x2, float y2);
 	virtual string toString();
 	virtual void accept(Visitor* v);
 	virtual float surface() { return 0; }
